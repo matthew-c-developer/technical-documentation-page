@@ -1,0 +1,109 @@
+/*normalize elements by removing margin and padding*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+  /*set 1rem = 10px, set fonts, and create variables for colors*/
+  html {
+    font-size: 10px;
+    font-family: Verdana, sans-serif;
+    --bright-red: #FF0000;
+    --light-red: #D8B8B8;
+    --medium-red: #7F3F3F;
+    --dark-red: #3F0F0F;
+  }
+  /*set font size and background color for entire page*/
+  body {
+    font-size: 1.6rem;
+    background-color: var(--light-red);
+  }
+  /*remove bullet points on lists*/
+  #navbar ul li {
+    list-style: none;
+  }
+  /*style title of page*/
+  #navbar header {
+    padding: 1.6rem;
+    font-size: 2.4rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  /*make navigation stay on the side and always be visible*/
+  #navbar {
+    background-color: var(--dark-red);
+    color: white;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 25rem;
+    height: 100%;
+    padding: 2rem 0;
+  }
+  /*align navigation items*/
+  #navbar ul li {
+    text-align: center;
+    margin: 2rem 0;
+  }
+  /*remove default links styles*/
+  #navbar ul li a {
+    text-decoration: none;
+    color: white;
+  }
+  /*make navigation links bigger on hover*/
+  #navbar ul li a:hover {
+    font-weight: bold;
+  }
+  /*make sure documentation is visible with navigation on the side*/
+  #main-doc {
+    margin-left: 25rem;
+    background: var(--light-red);
+    max-width: 800px;
+  }
+  /*style headings for each documentation section*/
+  .main-section header {
+    font-size: 2.4rem;
+    margin: 2rem;
+  }
+  /*style paragraphs in documentation*/
+  .main-section p {
+    margin: 2rem;
+  }
+  /*style lists in documentation*/
+  .main-section ul {
+    margin: 2rem;
+  }
+  /*style code examples*/
+  .code-block {
+    display: block;
+    margin: 2rem;
+    padding: 2rem;
+    background: black;
+    color: white;
+  }
+  /*style iamges of LaTeX output*/
+  img {
+    display: block;
+    box-sizing: content-box;
+    width: 90%;
+    margin: 2rem;
+  }
+  /*style documentation list items*/
+  #main-doc ul li {
+    margin: 0 2rem;
+  }
+  /*remove default styles for links in the references*/
+  #tutorial-link {
+    color: black;
+  }
+  /*responsive design for smaller screens*/
+  @media screen and (max-width: 600px) {
+    /*put navigation menu at the top*/
+    #navbar {
+      position: static;
+      width: 100%;
+    }
+    /*put documentation in the middle*/
+    #main-doc {
+    margin-left: 0;
+    }
+  }

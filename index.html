@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Maxwell's Eqs in LaTeX</title>
+</head>
+<body>
+<!--navigation menu-->
+<nav id="navbar">
+    <!--site title and main topic-->
+    <header>Maxwell's Equations in LaTeX</header>
+    <!--navigation links-->
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li><a class="nav-link" href="#LaTeX_Document">LaTeX Document</a></li>
+      <li><a class="nav-link" href="#Equations">Equations</a></li>
+      <li><a class="nav-link" href="#Fractions_and_Functions">Fractions and Functions</a></li>
+      <li><a class="nav-link" href="#Symbols">Symbols</a></li>
+      <li><a class="nav-link" href="#Maxwell's_Equations">Maxwell's Equations</a></li>
+      <li><a class="nav-link" href="#References">References</a></li>
+    </ul>
+  </nav>
+  <!--main documentation-->
+  <main id="main-doc">
+    <!--introduction section-->
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <p>
+        LaTeX is a technology used for document preparation
+        that helps a writer separate their content from
+        their typesetting.
+        It is useful for creating things like articles and books
+        because it can do things like automatically generate
+        a table of contents.
+        The contents of a <code>.tex</code> file will look
+        similar to a markup language and can be compiled
+        into a PDF document with the declared format applied.
+        Additionally, LaTeX can be used with powerful packages
+        for the generation of nearly any mathematical expression.
+        For this reason, LaTeX is widely used in mathematics and
+        science.
+      </p>
+      <p>LaTeX is useful for rendering:</p>
+      <ul>
+        <li>symbols</li>
+        <li>equations</li>
+        <li>matrices</li>
+        <li>tables</li>
+        <li>graphs</li>
+      </ul>
+    <!--section on creating a LaTeX document-->
+    <section class="main-section" id="LaTeX_Document">
+      <header>LaTeX Document</header>
+      <p>
+        When creating a LaTeX document you can use any editor
+        you like. Create a text file and save it with the extension <code>.tex</code>. Then you can choose what type
+      of layout will be applied to your content by declaring a document class. for instance you can create an article by using the argument
+        <code>article</code> in the following command like so:
+      </p>
+      <code class="code-block">\documentclass{article}</code>
+      <p>
+        To add content to your document you must declare
+        a document environment.
+        You can do this with the <code>\begin</code> command.
+        Every environment created with <code>\begin</code>
+        must also be closed with a corresponding <code>\end</code>.
+        So the basic structure of an article would like:
+      </p>
+      <code class="code-block">
+        \documentclass{article}<br>
+        \begin{document}<br>
+        article content goes here<br>
+        \end{document}
+      </code>
+    </section>
+      <!--section on LaTeX equations-->
+      <section class="main-section" id="Equations">
+        <header>Equations</header>
+        <p>
+          LaTeX is a powerful too for creating and rendering equations.
+          To create an equation you must create an equation
+          environment similar to how you create a document environment.
+          You pass the argument <code>equation</code> to the
+          <code>\begin</code> and <code>\end</code> commands.
+          This method also automatically applies numbering
+          to every equation that you make.
+          You can render the equation of a line with:
+        </p>
+        <code class="code-block">
+          \begin{equation}<br>
+          y=mx+b<br>
+          \end{equation}
+        </code>
+        <p>When it is compiled you will get:</p>
+        <img src="latex-01.PNG" alt="LaTex render of the equation of a line">
+      </section>
+      <!--section on LaTeX fractions and functions-->
+      <section class="main-section" id="Fractions_and_Functions">
+        <header>Fractions and Functions</header>
+        <p>
+          There are many commands available to allow you
+          to create complex equations.
+          You can create a fraction with the <code>\frac</code>
+          command.
+          It takes two arguments.
+          The first is the numerator
+          and the second is the denominator.
+          This can be used to write the thin lens equation
+          with the following LaTeX:
+        </p>
+        <code class="code-block">
+          \begin{equation}<br>
+          \frac{1}{f}=\frac{1}{d_0}+\frac{1}{d_i}<br>
+          \end{equation}
+        </code>
+        <p>It will render as:</p>
+        <img src="latex-02.PNG" alt="LaTeX render of the thin lens equation">
+        <p>
+          Here we have also used an underscore
+          which puts the character that follows
+          in subscript. You can also use a caret
+          to put the character that follows
+          in superscript.
+        </p>
+        <p>
+          There are also many functions you can
+          write in LaTeX with various commands.
+          In the following example, a trigonometric
+          identity is written with a square root
+          created with the command <code>\sqrt</code>
+          and trig functions are created with the commands
+          <code>\sin</code> and <code>\cos</code>.
+        </p>
+        <code class="code-block">
+          \begin{equation}<br>
+          \sin{x}=\sqrt{1-\cos^2{x}}<br>
+          \end{equation}
+        </code>
+        <p>
+          Note the ability to place <code>^2</code>
+          between the command and its argument.
+          The result is:
+        </p>
+        <img src="latex-03.PNG" alt="LaTeX render of a trig identity">
+        <p>
+          In order to use commands like
+          <code>\sin</code> and <code>\cos</code>
+          you may need to import the package amsmath.
+          This can be done buy using the command
+          <code>\usepackage{amsmath}</code> at
+          the beginning of your document after
+          you declare the document class.
+        </p>
+      </section>
+      <!--section on symbols in LaTeX-->
+      <section class="main-section" id="Symbols">
+        <header>Symbols</header>
+        <p>
+          LaTeX includes commands to print symbols
+          ranging from the Greek alphabet to
+          various math operations and symbols.
+          The greek letter alpha can be rendered
+          with the command <code>\alpha</code>.
+          The greek letter omega can be rendered with
+          <code>\omega</code> and an uppercase omega
+          can be rendered with <code>\Omega</code>.
+          A multiplicaion symbol can be made with
+          <code>\times</code> and a proportionality
+          symbol can be made with <code>\propto</code>.
+          Here is an example LaTeX sample and output
+          that uses various symbols that are easily
+          accessible with commands. Here is Einstein's
+          equation of general relativity.
+        </p>
+        <code class="code-block">
+          \begin{equation}<br>
+          G_{\mu\nu}= 8\pi G\left(T_{\mu\nu} +\rho_\Lambda g_{\mu\nu}\right)<br>
+          \end{equation}
+        </code>
+        <img src="latex-04.PNG" alt="LaTeX render of Einstein's equation of general relativity">
+        <p>
+          There are a couple other techniques implemented
+          here.
+          In order to put more than one character in
+          superscript or subcript,
+          you can place all of the charaters in curly
+          brackets after the caret or underscore.
+          To create a set of parentheses that scale to
+          the size of the content within, use
+          <code>\left(</code> and <code>\right)</code>.
+        </p>
+      </section>
+      <!--section on creating Maxwell's equations in LaTeX-->
+      <section class="main-section" id="Maxwell's_Equations">
+        <header>Maxwell's Equations</header>
+          <p>
+            We are now ready to write Maxwell's equations
+            in LaTeX.
+            We will use the command <code>\nabla</code>
+            to make the gradient operator,
+            the commmand <code>\cdot</code>
+            for the dot product operator,
+            and the command <code>\partial</code>
+            for the partial differential.
+          </p>
+          <code class="code-block">
+            \begin{equation}<br>
+            \nabla\cdot E=\frac{1}{\epsilon_0}\rho<br>
+            \end{equation}<br><br>
+            \begin{equation}<br>
+            \nabla\times E=-\frac{\partial B}{\partial t}<br>
+            \end{equation}<br><br>
+  
+            \begin{equation}<br>
+            \nabla\cdot B=0<br>
+            \end{equation}<br><br>
+  
+            \begin{equation}<br>
+            \nabla\times B=\mu_0 J +\mu_0\epsilon_0 \frac{\partial E}{\partial t}<br>
+  
+            \end{equation}<br>
+          </code>
+        <p>
+          The result is:
+        </p>
+        <img src="latex-05.PNG" alt="LaTeX render of Maxwell's equations">
+      </section>
+      <!--references section-->
+      <section class="main-section" id="References">
+        <header>References</header>
+        <p>LaTeX-Tutorial by Xiong Ying at <a id="tutorial-link" href="https://latex-tutorial.com/">latex-tutorial.com</a></p>
+        <p><em>Introduction to Electrodynamics</em> by David J. Griffiths</p>
+      </section>
+  </main>      
+</body>
+</html>
